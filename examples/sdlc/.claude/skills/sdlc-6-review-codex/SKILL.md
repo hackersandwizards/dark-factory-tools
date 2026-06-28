@@ -1,6 +1,6 @@
 ---
 name: sdlc-6-review-codex
-description: Run the review-codex stage of the sdlc pipeline
+description: Run the review-codex stage of the sdlc workflow
 context: fork
 agent: sdlc-6-review-codex
 model: haiku

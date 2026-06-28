@@ -1,6 +1,6 @@
 export const meta = {
   name: "sdlc",
-  description: "Run the sdlc pipeline end to end",
+  description: "Run the sdlc workflow end to end",
 };
 
 // Stages run as their named agents: model, effort, tools, and the SubagentStop gate
@@ -55,5 +55,5 @@ while (true) {
 out = await stage("sdlc-8-acceptance", out, "acceptance");
 out = await stage("sdlc-9-commit", out, "commit");
 out = await stage("sdlc-10-report", out, "report");
-// build-pipeline: append stage lines above this line
+// build-workflow: append stage lines above this line
 return out;

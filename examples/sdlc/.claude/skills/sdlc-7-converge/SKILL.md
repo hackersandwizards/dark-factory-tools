@@ -1,6 +1,6 @@
 ---
 name: sdlc-7-converge
-description: Run the converge stage of the sdlc pipeline
+description: Run the converge stage of the sdlc workflow
 context: fork
 agent: sdlc-7-converge
 model: haiku

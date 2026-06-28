@@ -1,6 +1,6 @@
 ---
 name: sdlc-1-plan
-description: Run the plan stage of the sdlc pipeline
+description: Run the plan stage of the sdlc workflow
 context: fork
 agent: sdlc-1-plan
 model: haiku

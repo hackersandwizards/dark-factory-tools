@@ -1,6 +1,6 @@
 ---
 name: sdlc-5-review-claude
-description: sdlc pipeline stage 5 (review-claude)
+description: sdlc workflow stage 5 (review-claude)
 model: opus
 effort: high
 tools: Read, Grep, Glob, Bash, Skill

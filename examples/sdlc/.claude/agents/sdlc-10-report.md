@@ -1,6 +1,6 @@
 ---
 name: sdlc-10-report
-description: sdlc pipeline stage 10 (report)
+description: sdlc workflow stage 10 (report)
 model: haiku
 effort: low
 tools: Read, Grep, Glob

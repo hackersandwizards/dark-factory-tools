@@ -1,6 +1,6 @@
 ---
 name: sdlc-7-converge
-description: sdlc pipeline stage 7 (converge)
+description: sdlc workflow stage 7 (converge)
 model: opus
 effort: high
 tools: Read, Grep, Glob

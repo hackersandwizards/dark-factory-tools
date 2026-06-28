@@ -1,6 +1,6 @@
-# SDLC pipeline — build spec
+# SDLC workflow — build spec
 
-Build a pipeline named `sdlc` with the build-pipeline skill (one stage per call), in order. The pipeline takes a feature request and carries it through each stage to the next.
+Build a workflow named `sdlc` with the build-workflow skill (one stage per call), in order. The workflow takes a feature request and carries it through each stage to the next.
 
 1. **plan** — opus, high. Turn the feature request into an implementation plan with acceptance criteria. Done when the plan and acceptance criteria exist.
 2. **tests** — opus, medium. Write tests for the planned behavior. Done when the new tests run and fail.

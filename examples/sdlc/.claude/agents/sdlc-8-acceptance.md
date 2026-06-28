@@ -1,6 +1,6 @@
 ---
 name: sdlc-8-acceptance
-description: sdlc pipeline stage 8 (acceptance)
+description: sdlc workflow stage 8 (acceptance)
 model: sonnet
 effort: medium
 tools: Read, Grep, Glob, mcp__chrome-devtools__navigate_page, mcp__chrome-devtools__new_page, mcp__chrome-devtools__take_snapshot, mcp__chrome-devtools__take_screenshot, mcp__chrome-devtools__click, mcp__chrome-devtools__fill, mcp__chrome-devtools__fill_form, mcp__chrome-devtools__wait_for, mcp__chrome-devtools__evaluate_script, mcp__chrome-devtools__list_console_messages, mcp__chrome-devtools__list_network_requests

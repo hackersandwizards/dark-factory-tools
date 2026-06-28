@@ -1,6 +1,6 @@
 ---
 name: sdlc-5-review-claude
-description: Run the review-claude stage of the sdlc pipeline
+description: Run the review-claude stage of the sdlc workflow
 context: fork
 agent: sdlc-5-review-claude
 model: haiku

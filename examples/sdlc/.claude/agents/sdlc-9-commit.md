@@ -1,6 +1,6 @@
 ---
 name: sdlc-9-commit
-description: sdlc pipeline stage 9 (commit)
+description: sdlc workflow stage 9 (commit)
 model: sonnet
 effort: low
 tools: Read, Grep, Glob, Bash
@@ -11,7 +11,7 @@ hooks:
           command: "out=$(git diff --cached --quiet 2>&1) || { echo \"sdlc/commit: gate not satisfied (ran: git diff --cached --quiet). Staged changes remain uncommitted. Fix what the output below shows, then finish:\" >&2; echo \"$out\" >&2; exit 2; }"
 ---
 
-Commit the changes this pipeline produced on the current branch.
+Commit the changes this workflow produced on the current branch.
 
 - Read the previous stage's summary, then run `git status` and `git diff` to see exactly what changed.
 - Stage the feature and test files and commit them in a single commit. Do not push, do not amend, do not create a branch.

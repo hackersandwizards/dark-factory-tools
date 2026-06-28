@@ -1,6 +1,6 @@
 ---
 name: sdlc-8-acceptance
-description: Run the acceptance stage of the sdlc pipeline
+description: Run the acceptance stage of the sdlc workflow
 context: fork
 agent: sdlc-8-acceptance
 model: haiku

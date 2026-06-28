@@ -1,6 +1,6 @@
 ---
 name: sdlc-9-commit
-description: Run the commit stage of the sdlc pipeline
+description: Run the commit stage of the sdlc workflow
 context: fork
 agent: sdlc-9-commit
 model: sonnet

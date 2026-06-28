@@ -1,6 +1,6 @@
 ---
 name: sdlc-4-simplify
-description: sdlc pipeline stage 4 (simplify)
+description: sdlc workflow stage 4 (simplify)
 model: sonnet
 effort: medium
 tools: Read, Grep, Glob, Edit, Bash, Skill

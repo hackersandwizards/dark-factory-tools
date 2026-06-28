@@ -1,6 +1,6 @@
 ---
 name: sdlc-10-report
-description: Run the report stage of the sdlc pipeline
+description: Run the report stage of the sdlc workflow
 context: fork
 agent: sdlc-10-report
 model: haiku

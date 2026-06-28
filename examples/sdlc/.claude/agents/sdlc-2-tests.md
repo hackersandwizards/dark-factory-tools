@@ -1,6 +1,6 @@
 ---
 name: sdlc-2-tests
-description: sdlc pipeline stage 2 (tests)
+description: sdlc workflow stage 2 (tests)
 model: opus
 effort: medium
 tools: Read, Grep, Glob, Write, Edit, Bash

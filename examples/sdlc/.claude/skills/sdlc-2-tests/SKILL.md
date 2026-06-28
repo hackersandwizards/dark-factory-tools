@@ -1,6 +1,6 @@
 ---
 name: sdlc-2-tests
-description: Run the tests stage of the sdlc pipeline
+description: Run the tests stage of the sdlc workflow
 context: fork
 agent: sdlc-2-tests
 model: haiku

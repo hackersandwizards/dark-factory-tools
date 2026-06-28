@@ -1,6 +1,6 @@
 ---
 name: sdlc-3-implement
-description: sdlc pipeline stage 3 (implement)
+description: sdlc workflow stage 3 (implement)
 model: opus
 effort: high
 tools: Read, Grep, Glob, Write, Edit, Bash

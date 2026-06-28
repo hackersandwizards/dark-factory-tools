@@ -1,6 +1,6 @@
 ---
-name: improve-pipeline
-description: Run a dynamic workflow on a real input, observe it without flooding context, verify its assumptions (gates fire, structured returns thread and branch, parallel stages overlap), then turn what you learn into edits to the workflow, its agents and skills, and the build-pipeline generator that produced it. Use after generating or changing a pipeline, or to dogfood and harden any Claude Code dynamic workflow.
+name: improve-workflow
+description: Run a dynamic workflow on a real input, observe it without flooding context, verify its assumptions (gates fire, structured returns thread and branch, parallel stages overlap), then turn what you learn into edits to the workflow, its agents and skills, and the build-workflow generator that produced it. Use after generating or changing a workflow, or to dogfood and harden any Claude Code dynamic workflow.
 argument-hint: "<workflow-name> <concrete input to run it on>"
 model: opus
 effort: high
@@ -37,5 +37,5 @@ For anything that did not progress as intended, trace it to the exact stage, age
 ## 5. Improve and propagate
 
 - Fix the workflow, its agents, and its skills.
-- Lift every general lesson into the build-pipeline generator templates, so the next pipeline it scaffolds embodies the fix instead of repeating the mistake.
+- Lift every general lesson into the build-workflow generator templates, so the next workflow it scaffolds embodies the fix instead of repeating the mistake.
 - Re-run to confirm, then discard drill artifacts unless a commit stage recorded them on purpose.

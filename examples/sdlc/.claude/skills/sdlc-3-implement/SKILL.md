@@ -1,6 +1,6 @@
 ---
 name: sdlc-3-implement
-description: Run the implement stage of the sdlc pipeline
+description: Run the implement stage of the sdlc workflow
 context: fork
 agent: sdlc-3-implement
 model: haiku

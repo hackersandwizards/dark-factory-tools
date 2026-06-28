@@ -1,6 +1,6 @@
 ---
 name: sdlc-6-review-codex
-description: sdlc pipeline stage 6 (review-codex)
+description: sdlc workflow stage 6 (review-codex)
 model: sonnet
 effort: medium
 tools: Read, Grep, Glob, Bash

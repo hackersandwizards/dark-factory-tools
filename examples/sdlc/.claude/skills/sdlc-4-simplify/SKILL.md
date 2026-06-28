@@ -1,6 +1,6 @@
 ---
 name: sdlc-4-simplify
-description: Run the simplify stage of the sdlc pipeline
+description: Run the simplify stage of the sdlc workflow
 context: fork
 agent: sdlc-4-simplify
 model: haiku

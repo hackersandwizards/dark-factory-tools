@@ -1,6 +1,6 @@
 ---
 name: sdlc-1-plan
-description: sdlc pipeline stage 1 (plan)
+description: sdlc workflow stage 1 (plan)
 model: opus
 effort: high
 tools: Read, Grep, Glob

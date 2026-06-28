@@ -3,7 +3,7 @@
   "owner": {
     "name": "Benedikt Stemmildt"
   },
-  "description": "Local marketplace for this repo's Claude Code plugins",
+  "description": "An artificer's kit for building minimal dark-factories on Claude Code: small, gated agent steps composed into deterministic builds you can read end to end",
   "plugins": [
     {
       "name": "build-workflow",

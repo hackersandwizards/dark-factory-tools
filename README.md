@@ -1,27 +1,35 @@
-# dark-factory-tools
+# artificer
 
-A Claude Code plugin marketplace from [hackers&wizards](https://hackersandwizards.dev). It hosts plugins that turn agentic engineering practices into reusable Claude Code tooling.
+An artificer's kit for building minimal dark-factories on Claude Code. You compose small, gated agent steps into a deterministic build you can read end to end. The model does the work. The harness stays thin.
+
+Built by [hackers&wizards](https://hackersandwizards.dev). We have spent 20+ years building and running production systems, and we teach Functional Agentic Engineering: small composable steps over sprawling harnesses. artificer is that practice as Claude Code tooling.
+
+A "dark factory" is a lights-out production line that runs without people watching it. The usual way to get there is a giant harness that nobody can follow. artificer builds the other kind: a line small enough to hold in your head, where the model does the thinking and the harness only keeps it on track.
+
+## What you build
+
+The `build-workflow` plugin scaffolds one stage at a time. Each stage gets a subagent with a gate that re-runs until its check passes, a launcher skill to run the stage on its own, and a line in a workflow script that threads each stage's output into the next.
+
+A worked example is the sdlc line in `examples/sdlc/`. A feature request goes in, a tested and accepted change comes out:
+
+```
+plan -> tests -> implement -> simplify -+-> review-claude -+-> converge -> acceptance -> report
+                                        +-> review-codex --+       |
+                                                    (real issues? loop back to implement, max 3)
+```
+
+Nine stages. The two reviews run in parallel, converge waits for both and loops back on real issues. Every stage is a few lines you can read. The orchestration is plain JavaScript control flow, not a black box.
 
 ## Install
 
-Add the marketplace, then install a plugin:
+Add the marketplace, then install the plugin:
 
 ```
-/plugin marketplace add hackersandwizards/dark-factory-tools
+/plugin marketplace add hackersandwizards/artificer
 /plugin install build-workflow@hackersandwizards
 ```
 
-## Plugins
-
-### build-workflow
-
-Scaffold a multi-step agent workflow, one stage at a time. Each stage you add gets three pieces:
-
-- a per-stage subagent with a `SubagentStop` gate that re-runs the agent until its check passes
-- a manual launcher skill, so you can run a single stage on its own
-- a dynamic-workflow script that runs the stages in order and threads each stage's output into the next
-
-You describe a stage and the generator writes the files. The check command is the contract: a stage is done only when its gate exits 0 (tests green, build clean, review complete). Run the skill once per stage you want to add.
+## Build a stage
 
 ```
 /build-workflow <workflow> <order> <step>: role / models / tools / check
@@ -33,32 +41,20 @@ For example, a first stage that turns a feature request into a plan:
 /build-workflow sdlc 1 plan: Turn the request into a plan with acceptance criteria / opus, high / Read, Write / true
 ```
 
-Linear workflows append a stage line per call. For parallel stages, loops, and escalation, edit the generated `.claude/workflows/<workflow>.js` directly. The generator embeds the recipes as comments.
+Each call appends a stage. The check command is the contract: a stage is done only when its gate exits 0 (tests green, build clean, review complete). For parallel stages, loops, and escalation, edit the generated `.claude/workflows/<workflow>.js` directly. The generator embeds the recipes as comments.
 
-The plugin also ships `/improve-workflow`, which runs a generated workflow on a real input, verifies its assumptions (gates fire, structured returns branch, parallel stages overlap), and feeds what it learns back into the workflow and the generator templates.
+The plugin also ships `/improve-workflow`. It runs a generated workflow on a real input, checks that its assumptions hold (gates fire, structured returns branch, parallel stages overlap), and feeds what it learns back into the workflow and the generator templates.
 
-## Example: the sdlc workflow
+## Scope
 
-`examples/sdlc/` is a worked workflow built with `build-workflow`. It carries a feature request through nine stages:
-
-1. **plan**: turn the request into a plan with acceptance criteria
-2. **tests**: write failing tests for the planned behavior
-3. **implement**: make the tests pass
-4. **simplify**: clean up while the tests stay green
-5. **review-claude**: review the change and list real issues
-6. **review-codex**: a second review via `codex exec`
-7. **converge**: reconcile both reviews into one verdict
-8. **acceptance**: exercise the feature in a real browser
-9. **report**: summarize what was built, tested, and accepted
-
-review-claude and review-codex run in parallel; converge waits for both. If converge finds real issues it loops back to implement, up to three rounds, then asks for help. See `examples/sdlc/sdlc.md` for the full build spec and `examples/sdlc/.claude/workflows/sdlc.js` for the orchestration.
+artificer targets Claude Code. The stages it builds are Claude Code agents, skills, and workflow scripts.
 
 ## Repository layout
 
 ```
 .claude-plugin/marketplace.json   the marketplace manifest
 plugins/build-workflow/           the build-workflow plugin
-examples/sdlc/                    a workflow built with build-workflow
+examples/sdlc/                    a dark-factory built with build-workflow
 ```
 
 ## License
